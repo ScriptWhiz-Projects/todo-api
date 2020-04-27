@@ -32,3 +32,9 @@ Route::put('todo','TodoController@store');
 
 //Delete todo for a user
 Route::delete('todo/{id}', 'ToDoController@destroy');
+
+// For file download, in this case the avatar
+Route::get('get/file', 'FileController@downloadFile');
+
+//For file upload,in this case the avatar
+Route::post('post/file', 'FileController@uploadFile');

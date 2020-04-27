@@ -36,6 +36,7 @@ class ToDoController extends Controller
         $todo->id = $request->input('todo_id');
         $todo->name = $request->input('name');
         $todo->completed = $request->input('completed');
+        $todo->user_id = auth()->user()->email;
         $todo->deleted = $request->input('deleted');
 
         if($todo->save()) {
