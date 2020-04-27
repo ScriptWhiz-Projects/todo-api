@@ -17,3 +17,18 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+//Return all the todo's belonging to a specific user
+Route::get('todo', 'ToDoController@index');
+
+//Return a single todo per user
+Route::get('todo/{id}', 'ToDoController@show');
+
+//Create new todo
+Route::post('todo', 'ToDoController@store');
+
+//Update todo for user
+Route::put('todo','TodoController@store');
+
+//Delete todo for a user
+Route::delete('todo/{id}', 'ToDoController@destroy');
